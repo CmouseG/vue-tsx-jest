@@ -11,8 +11,15 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "babel-plugin-jsx-event-modifiers": "^2.0.5",
+    "babel-plugin-jsx-v-model": "^2.0.3",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.1",
+    "typescript-styled-plugin": "^0.5.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "vue-styled-components": "^1.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
