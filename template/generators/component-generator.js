@@ -29,25 +29,25 @@ module.exports = projectPath => {
         {
           type: 'add',
           path: `${basePath}/\{{ name }}.tsx`,
-          templateFile: `${cwd}/generators/templates/component.template`,
+          templateFile: `${cwd}/generators/templates/component.template.hbs`,
           abortOnFail: true
         },
         {
           type: 'add',
           path: `${basePath}/\{{ name }}.test.tsx`,
-          templateFile: `${cwd}/generators/templates/component.test.template`,
+          templateFile: `${cwd}/generators/templates/component.test.template.hbs`,
           abortOnFail: true
         },
         {
           type: 'add',
           path: `${basePath}/index.ts`,
-          templateFile: `${cwd}/generators/templates/index.template`,
+          templateFile: `${cwd}/generators/templates/index.template.hbs`,
           abortOnFail: true
         },
         {
           type: 'add',
           path: `${basePath}/style.js`,
-          templateFile: `${cwd}/generators/templates/style.template`,
+          templateFile: `${cwd}/generators/templates/style.template.hbs`,
           abortOnFail: true
         }
       ]
