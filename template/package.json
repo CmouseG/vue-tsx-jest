@@ -1,24 +1,28 @@
 {
-  "name": "bookmanager",
+  "name": "{{ name }}",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Guilherme Lima <guilhermelimak@gmail.com>",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "test": "jest --no-cache"
+    "test": "jest --no-cache",
+    "generate": "plop"
   },
   "dependencies": {
+    "@types/jasmine": "^2.8.6",
     "@vue/test-utils": "^1.0.0-beta.11",
     "babel-plugin-jsx-event-modifiers": "^2.0.5",
     "babel-plugin-jsx-v-model": "^2.0.3",
     "dynamic-import": "^0.0.1",
+    "inquirer-file-path": "^1.0.0",
     "jest": "^22.3.0",
     "jest-vue": "^0.8.2",
     "node": "^9.5.0",
+    "plop": "^1.9.1",
     "ts-jest": "^22.0.4",
     "ts-loader": "^3.5.0",
     "tslib": "^1.9.0",
@@ -87,33 +91,19 @@
     "not ie <= 8"
   ],
   "jest": {
-    "collectCoverage": false,
-    "coverageReporters": [
-      "lcov"
-    ],
-    "coverageDirectory": "./coverage",
-    "moduleDirectories": [
-      "node_modules",
-      "<rootDir>/src"
-    ],
-    "moduleNameMapper": {
-      "^vue$": "vue/dist/vue.common.js"
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      ".(js|ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "testRegex": "\\.test\\.tsx?$",
+    "modulePaths": [
+      "<rootDir>/src/",
+      "<rootDir>/node_modules/"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
-      "vue",
-      "js",
-      "json",
-      "jsx"
-    ],
-    "verbose": true,
-    "mapCoverage": true,
-    "transform": {
-      ".js$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor",
-      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue"
-    }
+      "js"
+    ]
   }
 }
