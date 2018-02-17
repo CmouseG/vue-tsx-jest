@@ -19,6 +19,12 @@
     "isolatedModules": false,
     "declaration": true,
     "removeComments": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "suppressImplicitAnyIndexErrors": true,
     "types": [
       "jasmine"
