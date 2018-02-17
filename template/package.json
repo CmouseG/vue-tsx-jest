@@ -91,6 +91,11 @@
     "not ie <= 8"
   ],
   "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "./tsconfig.test.json"
+      }
+    },
     "transform": {
       "^.+\\.js?$": "babel-jest",
       ".(js|ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
