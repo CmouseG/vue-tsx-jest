@@ -2,7 +2,7 @@
 module.exports = projectPath => {
   const cwd = process.cwd()
 
-  const basePath = `${projectPath}/\{{ directoryBase }}/\{{ componentType }}s/\{{ name }}`
+  const basePath = `${projectPath}/{{ directoryBase }}/{{ componentType }}s/{{ pascalCase name }}`
 
   return {
     name: 'Component',
@@ -28,14 +28,20 @@ module.exports = projectPath => {
       actions: [
         {
           type: 'add',
-          path: `${basePath}/\{{ name }}.tsx`,
+          path: `${basePath}/{{ name }}.tsx`,
           templateFile: `${cwd}/generators/templates/component.template.hbs`,
           abortOnFail: true
         },
         {
           type: 'add',
-          path: `${basePath}/\{{ name }}.test.tsx`,
+          path: `${basePath}/{{ name }}.test.tsx`,
           templateFile: `${cwd}/generators/templates/component.test.template.hbs`,
+          abortOnFail: true
+        },
+        {
+          type: 'add',
+          path: `${basePath}/{{ name }}.story.js`,
+          templateFile: `${cwd}/generators/templates/component.story.template.hbs`,
           abortOnFail: true
         },
         {
